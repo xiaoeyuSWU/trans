@@ -168,7 +168,7 @@
 
         <h3>Transformer可以干什么</h3>
         <p>Transformer最初是一种用于机器翻译的深度学习模型，由Google的研究团队在2017年通过<a href="https://arxiv.org/abs/1706.03762" style="color: rgb(65, 131, 196); text-decoration: none;" target="_blank">Attention Is All You Need</a>这篇论文提出。如今，Transformer已经渗透到我们生活的方方面面。例如，当你与ChatGPT、Kimi、文心一言等<a href="https://blog.csdn.net/fudaihb/article/details/136917645" style="color: rgb(65, 131, 196); text-decoration: none;" target="_blank">大语言模型</a>进行对话时；当你使用翻译工具进行语言翻译时；当你使用图/文/视频信息流软件，发现平台能精准推送你喜欢的内容时...</p>
-        <p>甚至，Transformer还可以用在生物学领域，如<a href="https://www.nature.com/articles/s41586-021-03819-2" style="color: rgb(65, 131, 196); text-decoration: none;" target="_blank">AlphaFold2</a>，它结合了Transformer模型，显著提高了蛋白质结构预测的准确性。这有助于药物开发和疾病研究，促进人类福祉。总之，Transformer是一个强大的深度学习算模型，已经在我们日常生活的各个方面得到了广泛应用。</p>
+        <p>甚至，Transformer还可以用在生物学领域，如<a href="https://www.nature.com/articles/s41586-021-03819-2" style="color: rgb(65, 131, 196); text-decoration: none;" target="_blank">AlphaFold2</a>，它结合了Transformer模型，显著提高了蛋白质结构预测的准确性。这有助于药物开发和疾病研究，促进人类福祉。总之，Transformer是一个强大的深度学习模型，已经在我们日常生活的各个方面得到了广泛应用。</p>
 
         
 
@@ -236,7 +236,7 @@
         <p>👉第六步👈是将所有加权后的值向量相加（权重是softmax得分）。注意力权重（softmax得分）越高表示模型认为在当前单词位置上，其他单词对其表示的影响越大。每个单词会有多个softmax得分，这些得分表示该单词与句子中所有其他单词之间的相关性。这产生了该位置自注意力层的输出（对于第一个单词）。也就是V1+V2+...+Vn，结果为Z1。</p>
         <img src="transpic/12.png" alt="Encoder-Decoder Diagram">
         <p>最后，每个单词都会有一个对应的Z向量，Z向量是一个包含了多维信息的向量：</p>
-        <p>1是输入序列中每个单词的原始词嵌入信息：虽然进行了加权和聚合，原始的输入信息仍然保留在最终的表示中。你说得很对。最后的 Z1Z_1Z1​ 是许多单词的值向量（经过Softmax加权后的加和）的结果。确实，通过注意力机制计算得到的 Z1Z_1Z1​ 是加权和，而不是简单地保留输入嵌入向量的信息。但即使如此，原始输入的信息仍然以某种形式保留在结果中。这是因为值向量 VVV 是从输入嵌入向量 xxx 派生出来的。每一个单词的值向量 VVV 都是由该单词自己的嵌入向量派生的。因此，最终计算得到的 Z1Z_1Z1​ 向量确实包含了所有单词的词嵌入信息。</p>
+        <p>1是输入序列中每个单词的原始词嵌入信息：虽然进行了加权和聚合，原始的输入信息仍然保留在最终的表示中。</p>
         <p>2是上下文相关性：向量包含了当前单词与其他每一个单词的相关性信息，反映了在当前单词的位置上，哪些单词对其表示有更大的影响。</p>
         <p>自注意力计算到此为止！生成的向量是我们可以传递给前馈神经网络的向量。</p>
         <p>实际操作中，上面的这些是通过矩阵来计算的。主要是因为矩阵运算可以同时处理多个向量。这对于深度学习模型来说尤为重要，因为它们需要处理大量数据。并行处理可以显著加快训练和推理速度。</p>
@@ -306,8 +306,9 @@
 
         <h3>站在巨人的肩膀上</h3>
         <p>[1]Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need[J]. Advances in neural information processing systems, 2017, 30.</p>
-        <p>[2]李沐, Transformer论文逐段精读</p>
-        <p>[3]Alammar, J (2018). The Illustrated Transformer [Blog post]. Retrieved from https://jalammar.github.io/illustrated-transformer/</p>
+        <p>[2]李沐, Transformer论文逐段精读 [Bilibili video].</p>
+        <p>[2]吴恩达, [双语字幕]吴恩达深度学习deeplearning.ai [Bilibili video].</p>
+        <p>[3]Alammar, J (2018). The Illustrated Transformer [Blog post].</p>
         <p>[4]Bozic V, Dordevic D, Coppola D, et al. Rethinking Attention: Exploring Shallow Feed-Forward Neural Networks as an Alternative to Attention Layers in Transformers[J]. arXiv preprint arXiv:2311.10642, 2023.</p>
         <p>[5]Han D, Pan X, Han Y, et al. Flatten transformer: Vision transformer using focused linear attention[C]//Proceedings of the IEEE/CVF international conference on computer vision. 2023: 5961-5971.</p>
         <p>[6]Xiong R, Yang Y, He D, et al. On layer normalization in the transformer architecture[C]//International Conference on Machine Learning. PMLR, 2020: 10524-10533.</p>
